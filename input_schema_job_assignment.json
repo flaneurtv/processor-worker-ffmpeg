@@ -1,0 +1,26 @@
+{
+	"topic": "flaneur/job_queue/workers/AAAAAAAA-1285-4E4C-A44E-AAAABBBB0000/job_assignment: the uuid is the workers own $SERVICE_UUID",
+	"service_name":"set by sender",
+	"service_host":"set by sender",
+	"service_uuid":"set by sender",
+	"created_at": "iso_time: set by sender",
+	"payload": {
+		"uuid": "1450C811-1285-4E4C-A44E-AAAABBBB0000",
+		"refernece_uuid": "RRRRRRRR-1285-4E4C-A44E-RRRRBBBB0000",
+		"queue_name": "ffmpeg",
+		"command": "ffmpeg",
+		"args": [
+			"-i", "somedir/somefile",
+			"-f", "mp4",
+			"-c:v", "libx264",
+			"-c:a", "libfdk_aac",
+			"someoutputdir/someoutputfile"
+		],
+		"created_at": "iso_time",
+		"started_at": "iso_time: set by this worker at processing start",
+		"finished_at": "iso_time: set by this worker at job completion",
+		"stdout": "string: full stdout from ffmpeg subporcess",
+		"stderr": "string: full stderr from ffmpeg subprocess",
+		"exitcode": 0
+	}		
+}

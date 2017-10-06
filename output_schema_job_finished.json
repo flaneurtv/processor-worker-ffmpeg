@@ -1,0 +1,19 @@
+{
+	"job_uuid": "1450C811-1285-4E4C-A44E-AAAABBBB0000",
+	"job_reference": "uuid of source video",
+	"job_queue": "ffmpeg",
+	"command": "ffmpeg",
+	"args": [
+		"-i", "somedir/somefile",
+		"-f", "mp4",
+		"-c:v", "libx264",
+		"-c:a", "libfdk_aac",
+		"someoutputdir/someoutputfile"
+	],
+	"created_at": "iso_time",
+	"started_at": "iso_time: set by this worker at start",
+	"finished_at": "iso_time: set by this worker at completion",
+	"stdout": "string: full stdout from ffmpeg subporcess",
+	"stderr": "string: full stderr from ffmpeg subprocess",
+	"exitcode": 0,
+}
