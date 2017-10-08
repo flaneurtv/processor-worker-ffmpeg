@@ -1,0 +1,13 @@
+{
+	"topic": "$NAMESPACE_PUBLISHER/job_queue/workers/AAAAAAAA-1285-4E4C-A44E-AAAABBBB0000/worker_idle: the uuid is the workers own $SERVICE_UUID",
+	"service_name":"$SERVICE_NAME",
+	"service_host":"$SERVICE_HOST",
+	"service_uuid":"$SERVICE_UUID",
+	"created_at": "iso_time: now",
+	"tick_reference": {
+    "tick_uuid": "$TICK_UUID",
+    "tick_timestamp": "$TICK_TIMESTAMP"
+  },
+	"payload": {
+	}		
+}

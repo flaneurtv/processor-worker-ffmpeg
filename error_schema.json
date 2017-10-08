@@ -1,0 +1,5 @@
+{
+	"log_level": "critical|error|warning|info|debug", 
+	"created_at": "timestamp in iso format", 
+	"log_message": "string: make sure double quotes are escaped!"
+}
