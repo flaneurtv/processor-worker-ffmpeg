@@ -42,15 +42,19 @@ after initialization worker is idle and waits for messages
   "service_uuid": "$SERVICE_UUID",
   "service_name": "$SERVICE_NAME",
   "service_host": "$SERVICE_HOST",
-  "created_at": "$CREATED_AT",
+  "created_at": "iso_time: now",
   "tick_reference": {
-    "tick_uuid": "$TICK_UUID",
-    "tick_timestamp": "$TICK_TIMESTAMP"
+    "uuid": "uuid: of the referenced tick",
+    "created_at": "iso_time of timestamp.microseconds: of the referenced tick"
   },
   "payload": {}
 }
 ```
-$NAMESPACE is actually either $NAMESPACE_LISTENER or $NAMESPACE_PUBLISHER, depending on whether the message is read from stdin or written to stdout. And of course, the real message has no newlines between fields except after the final '}' which thereby terminates the message.
+* Of course, the real message has no newlines between fields, only one after the final '}' which thereby terminates the message.
+* $NAMESPACE is actually either $NAMESPACE_LISTENER or $NAMESPACE_PUBLISHER, depending on whether the message is read from stdin or written to stdout.
+* The SERVICE as well as the NAMESPACE variables are set in the environment and can be retrieved and inserted that way.
+* A tick is a periodic *hello* message, consisting of the uuid of the tick and a created_at timestamp.
+* Services can respond to such a tick, in which case, they will carry the original tick uuid and timestamp as a reference.
 * stderr messages are json objects with a simplified schema. Topic, service attributes etc will be set upstream and therefore don't need to be added here. The general stderr message schema looks like this:
 ```
 {
