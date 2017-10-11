@@ -5,8 +5,8 @@
 	"service_uuid":"$SERVICE_UUID",
 	"created_at": "iso_time: now",
 	"tick_reference": {
-    "tick_uuid": "$TICK_UUID",
-    "tick_timestamp": "$TICK_TIMESTAMP"
+		"tick_uuid": "$TICK_UUID",
+		"tick_timestamp": "$TICK_TIMESTAMP"
   },
 	"payload": {
 	}		

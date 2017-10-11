@@ -5,9 +5,9 @@
 	"service_uuid":"$SERVICE_UUID",
 	"created_at": "iso_time: now",
 	"tick_reference": {
-    "uuid": "$TICK_UUID",
-    "created_at": "$TICK_TIMESTAMP"
-  },
+		"uuid": "$TICK_UUID",
+		"created_at": "$TICK_TIMESTAMP"
+	},
 	"payload": {
 		"uuid": "1450C811-1285-4E4C-A44E-AAAABBBB0000: job_uuid",
 		"reference_uuid": "RRRRRRRR-1285-4E4C-A44E-RRRRBBBB0000: e.g. uuid of source video",
