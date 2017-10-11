@@ -5,8 +5,8 @@
 	"service_uuid":"$SERVICE_UUID",
 	"created_at": "iso_time: now",
 	"tick_reference": {
-    "tick_uuid": "$TICK_UUID",
-    "tick_timestamp": "$TICK_TIMESTAMP"
+    "uuid": "$TICK_UUID",
+    "created_at": "$TICK_TIMESTAMP"
   },
 	"payload": {
 		"uuid": "1450C811-1285-4E4C-A44E-AAAABBBB0000: job_uuid",
@@ -14,11 +14,16 @@
 		"queue_name": "ffmpeg",
 		"command": "ffmpeg",
 		"args": [
-			"-i", "somedir/somefile",
-			"-f", "mp4",
+			"-f","lavfi",
+			"-i","testsrc=duration=60:size=1280x720:rate=25",
+			"-f","lavfi",
+			"-i","sine=frequency=220:beep_factor=4:duration=60:sample_rate=48000",
+			"-vf","\"drawtext=fontfile=/usr/share/fonts/TTF/FreeSans.ttf: timecode='00\\:00\\:00\\:00': r=25: x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000000@1\"",
 			"-c:v", "libx264",
 			"-c:a", "libfdk_aac",
-			"someoutputdir/someoutputfile"
+			"-y",
+			"-stats",
+			"out.mp4"
 		],
 		"created_at": "iso_time",
 		"started_at": "iso_time: set by this worker at processing start",

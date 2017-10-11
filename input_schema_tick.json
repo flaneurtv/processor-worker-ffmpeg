@@ -5,7 +5,6 @@
 	"service_host": "$SERVICE_HOST",
 	"created_at": "$CREATED_AT",
 	"payload": {
-			"tick_uuid": "$TICK_UUID",
-			"tick_timestamp": "$CREATED_AT"
+			"uuid": "$TICK_UUID"
 	}
 }

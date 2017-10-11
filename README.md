@@ -1,6 +1,8 @@
 
 # Processor Worker FFmpeg
 
+processor-worker-ffmpeg executes FFmpeg (transcoding) jobs, which are dispatched to it by a job queuing service.
+
 ## Basic Functional Pattern
 
 after initialization worker is idle and waits for messages
