@@ -3,9 +3,9 @@ FROM jrottenberg/ffmpeg:3.3-alpine as ffmpeg
 FROM golang:1.9-alpine as builder
 COPY --from=ffmpeg /usr/local/ /usr/local/
 RUN apk add --no-cache --update ca-certificates libcrypto1.0 libssl1.0 libgomp expat libgcc libstdc++
-COPY . /go/src/github.com/flaneurtv/worker-ffmpeg/
+COPY . /go/src/github.com/242617/flaneurtv/
 
-RUN cd /go/src/github.com/flaneurtv/worker-ffmpeg \
+RUN cd /go/src/github.com/242617/flaneurtv \
     && apk add --no-cache \
         git \
         gettext \
@@ -15,4 +15,4 @@ RUN cd /go/src/github.com/flaneurtv/worker-ffmpeg \
 
 WORKDIR /go
 
-CMD ash
+CMD /go/bin/worker-ffmpeg
